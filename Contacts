@@ -1,0 +1,12 @@
+contacts={"Greg":12123,"Mary":432424,"Bob":131341,"Susan":23244}
+#printing contacts
+print("Phone number for Susan is:",contacts["Susan"])
+#printing the lenght of the dictionary
+print("Lenght of dictionary is", len(contacts))
+#adding contacts to a dictionary
+contacts["John"]=442432
+contacts["Fred"]=313131
+#deleting a contact
+contacts.pop("Bob")
+#print the list after the changes done
+print(contacts)
