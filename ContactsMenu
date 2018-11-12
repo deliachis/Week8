@@ -1,0 +1,48 @@
+contacts={"Greg":12123,"Mary":432424,"Bob":131341,"Susan":23244}
+def main():
+    print("Your dic contains", len(contacts),"items")
+    print_dict()
+    choice=None
+    while choice!="0":
+        print(
+            """
+              Dictionary manipulation
+
+            0-Quit
+            1-Acces an entry
+            2-Add an entry
+            3-Delete an entry
+            4-Print dictionary
+            """
+            )
+        choice=input("Choice:")
+        print()
+        if choice=="0":
+            print("Good-bye.")
+        elif choice=="1":
+            key=input("What item do you want to access?: ")
+            access_contact(key)
+        elif choice=="2":
+            key=input("Enter key to add?: ")
+            value=int(input("Enter contact number to add: "))
+            add_dict(key,value)
+        elif choice=="3":
+            key=input("What item do you want to delete?: ")
+            del_entry(key)
+        elif choice=="4":
+            print_dict()
+            print("\nYour dictionary now contains", len(contacts),"items")
+        else:
+            print("\nSorry, but ",choice, "isn't a valid choice")
+            
+def print_dict():
+    print("Dicionary content are: \n",contacts)
+def access_contact(key):
+    print("Phone number for",key, "is:", contacts[key])
+def add_dict(key,value):
+    contacts[key]=value
+    print("You have added:", key, "\t: ",contacts[key])
+def del_entry(key):
+    contacts.pop(key)
+    print("Entry has been deleted")
+main()
